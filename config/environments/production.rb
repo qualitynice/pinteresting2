@@ -82,7 +82,7 @@ Pinteresting::Application.configure do
   #Set this to acutal hosthame
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  #Sets Paperclip to store images on Amazon S3 Storage
+  #Sets Paperclip to store images on Amazon S3 Storage System
   config.paperclip_defaults = {
     :storage => :s3,
     :s3_credentials => {
