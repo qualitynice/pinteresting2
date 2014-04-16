@@ -81,4 +81,14 @@ Pinteresting::Application.configure do
   #Required for Heroku
   #Set this to acutal hosthame
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  #Sets Paperclip to store images on Amazon S3 Storage
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => ENV['AWS_BUCKET'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
 end
